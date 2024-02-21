@@ -36,4 +36,9 @@ void lomuto_scheme(int *array, size_t size, int start, int end);
 size_t partition(int *array, size_t size, int start, int end);
 void quick_sort(int *array, size_t size);
 
+/*_Task7_*/
+void Merge_Sorting(int arr[], int l, int r);
+void merge(int arr[], int l, int m, int r);
+void merge_sort(int *array, size_t size);
+
 #endif /*_sort.h_*/
