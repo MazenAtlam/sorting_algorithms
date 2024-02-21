@@ -13,9 +13,9 @@ void merge(int arr[], int l, int m, int r) {        // left , middle , right
     int n1 = m - l + 1;
     int n2 = r - m;
     int n = r - l;
-    int* arr1 = new int(n1);
-    int* arr2 = new int(n2);
-    size_t j = 0, i = 0;
+    int* arr1 = malloc(sizeof(int) * n1);
+    int* arr2 = malloc(sizeof(int) * n2);
+    size_t j = 0, i = 0, k;
 				
 
     for (i = 0; i < n1; i++)
@@ -27,7 +27,10 @@ void merge(int arr[], int l, int m, int r) {        // left , middle , right
     i = 0, j = 0, k = l;
 
     while (i < n1 && j < n2) {
-        arr1[i] <= arr2[j] ? arr[k++] = arr1[i++] : arr[k++] = arr2[j++];
+        if(arr1[i] <= arr2[j]) 
+		arr[k++] = arr1[i++];
+	else
+		arr[k++] = arr2[j++];
     }
 
     while (i < n1)
